@@ -15,7 +15,7 @@ please use your own dev branch and make a pull request when your part is done.
 
 Documentation
 
-Post Object
+Post Object 
  * createdAt: represents when the post was created
  * title: title of the post
  * topic: worry OR gratitude
