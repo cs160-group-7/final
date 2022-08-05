@@ -16,6 +16,7 @@ please use your own dev branch and make a pull request when your part is done.
 Documentation
 
 /**
+ * Post Object
  * createdAt: represents when the post was created
  * title: title of the post
  * topic: worry OR gratitude
@@ -23,6 +24,7 @@ Documentation
  * author: author of the post
  * id : id of the post 
  */
+
  const Post = {
     createdAt : long,
     content : String,
@@ -33,6 +35,7 @@ Documentation
 }
 
 /**
+ * Comment Object
  * represents the comment of the post
  * author : Author of the comment
  * content : content of the comment
@@ -40,6 +43,7 @@ Documentation
  * belogsTo : represents which post the comment belongs to
  * id : id of the comment
  */
+
 const Comment = {
     createdAt : long,
     author : String,
