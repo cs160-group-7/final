@@ -3,11 +3,12 @@ import '../App.css';
 import logo from '../logo.svg';
 import { useEffect } from "react";
 import {getPosts, like} from "../javascript/Server"
+import {runTests} from "../javascript/testServer"
 
 const SamplePage = () => {
 
     useEffect(() => {
-        like("pBtJ5KEJ8nhjFm7u8HQz")
+        // runTests()
     }
     )
     return (

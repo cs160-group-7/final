@@ -22,7 +22,11 @@ function assert(condition, message) {
 }
 
 function assertFieldExists(object, field) {
-    assert(field in object, `Cannot find ${field} in object`)
+    try {
+        assert(field in object, `Cannot find ${field} in object`)
+    } catch(exception) {
+        throw new Error
+    }
 }
 
 /**
@@ -92,20 +96,9 @@ export const getPostsBy = async (uuid) => {
  * @param {Post}
  * @returns void
  */
-const makePost = async (post) => {
-    try {
-        assertFieldExists(post,"author")
-        assertFieldExists(post,"content")
-        assertFieldExists(post,"topic")
-        post.likes = 0
-        post.createdAt = Date.now();
-        const docRef = await addDoc(collection(db, "posts"), post);
-        console.log("Document written with ID: ", docRef.id);
-      } catch (exception) {
-        console.error("Error adding document: ", exception);
-      }
+export const makePost = async (post) => {
+    makePostHelper("posts", post)
 }
-
 
 /**
  * make Comment using the Comment Object
@@ -161,4 +154,20 @@ export const like = async (uuid) => {
     } catch(error) {
         console.log(error)
     }
+}
+
+
+// Helper Functions
+export const makePostHelper = async (bucket, post) => {
+    try {
+        assertFieldExists(post,"author")
+        assertFieldExists(post,"content")
+        assertFieldExists(post,"topic")
+        post.likes = 0
+        post.createdAt = Date.now();
+        const docRef = await addDoc(collection(db, bucket), post);
+        console.log("Document written with ID: ", docRef.id);
+      } catch (exception) {
+        return new Error("Error: makePostHelper")
+      }
 }
