@@ -8,7 +8,7 @@ import {runTests} from "../javascript/testServer"
 const SamplePage = () => {
 
     useEffect(() => {
-        // runTests()
+        runTests()
     }
     )
     return (

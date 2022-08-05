@@ -92,9 +92,9 @@ export const getPostsBy = async (uuid) => {
 
 /**
  * make post using the Post Object
- * raises an exception when fails.
+ * returns false if the operation failed.
  * @param {Post}
- * @returns void
+ * @returns {Boolean}
  */
 export const makePost = async (post) => {
     makePostHelper("posts", post)
@@ -104,19 +104,10 @@ export const makePost = async (post) => {
  * make Comment using the Comment Object
  * return true if the operation was successful.
  * @param {Comment}
- * @returns void
+ * @returns {Boolean}
  */
-const makeComment = async (comment) => {
-    try {
-        assertFieldExists(comment,"author")
-        assertFieldExists(comment,"content")
-        assertFieldExists(comment,"belongsTo")
-        const docRef = await addDoc(collection(db, "comments"), comment);
-        console.log("Document written with ID: ", docRef.id);
-      } catch (exception) {
-        console.error("Error adding document: ", exception);
-        throw exception
-      }
+export const makeComment = async(comment) => {
+    makeCommentHelper("comments", comment)
 }
 
 /**
@@ -151,8 +142,10 @@ export const like = async (uuid) => {
         const docSnap = await getDoc(docRef);
         const likes = docSnap.data().likes
         updateDoc(docRef, {"likes" : likes + 1})
+        return true;
     } catch(error) {
         console.log(error)
+        return false;
     }
 }
 
@@ -167,7 +160,23 @@ export const makePostHelper = async (bucket, post) => {
         post.createdAt = Date.now();
         const docRef = await addDoc(collection(db, bucket), post);
         console.log("Document written with ID: ", docRef.id);
+        return true;
       } catch (exception) {
-        return new Error("Error: makePostHelper")
+        return false;
+      }
+}
+
+
+
+export const makeCommentHelper = async (bucket, comment) => {
+    try {
+        assertFieldExists(comment,"author")
+        assertFieldExists(comment,"content")
+        assertFieldExists(comment,"belongsTo")
+        const docRef = await addDoc(collection(db, bucket), comment);
+        console.log("Document written with ID: ", docRef.id);
+        return true
+      } catch (exception) {
+        return false
       }
 }
