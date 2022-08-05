@@ -33,10 +33,10 @@ Post Object
 
 
 Questions:
-1. How To Route?
-Please edit javascript/Router.js to add your HTML or component to the react router.
-For example, if you want to add myPage,
-add this following line.
-<Route exact path = "myPage" element={<myPage />} />
+1. How To Route?  
+Please edit javascript/Router.js to add your HTML or component to the react router.  
+For example, if you want to add myPage,  
+add this following line.  
+<Route exact path = "myPage" element={<myPage />} />  
 
 
