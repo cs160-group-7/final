@@ -15,7 +15,6 @@ please use your own dev branch and make a pull request when your part is done.
 
 Documentation
 
-/**
  * Post Object
  * createdAt: represents when the post was created
  * title: title of the post
@@ -23,18 +22,16 @@ Documentation
  * likes: number of likes
  * author: author of the post
  * id : id of the post 
- */
 
  const Post = {
-    createdAt : long,
-    content : String,
-    topic : String,
-    likes : int,
-    author : String,
-    id : id
+    createdAt : long, <br />
+    content : String, <br />
+    topic : String, <br />
+    likes : int, <br />
+    author : String, <br />
+    id : id <br />
 }
 
-/**
  * Comment Object
  * represents the comment of the post
  * author : Author of the comment
@@ -42,14 +39,13 @@ Documentation
  * createAt : represents when the post was created
  * belogsTo : represents which post the comment belongs to
  * id : id of the comment
- */
 
 const Comment = {
-    createdAt : long,
-    author : String,
-    content : String,
-    belongsTo : id,
-    id : id
+    createdAt : long, <br />
+    author : String, <br />
+    content : String, <br />
+    belongsTo : id, <br />
+    id : id <br />
 }
 
 Questions:
