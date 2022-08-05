@@ -4,3 +4,6 @@ Our Figma Link: https://www.figma.com/file/9ctDTnQVBvxtzeEopxtGxp/Final-Project-
 
 Try npm start in your repo to test.
 Make sure that react is installed.
+
+npm install react
+npm install firebase
