@@ -14,6 +14,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
+function assert(condition, message) {
+    if (!condition) {
+        throw message || "Assertion failed";
+    }
+}
+
+function assertFieldExists(object, field) {
+    assert(field in object, `Cannot find ${field} in object`)
+}
+
 /**
  * This Funtion returns all Post Object from the server
  * @returns {List<Post>}
@@ -83,6 +94,11 @@ export const getPostsBy = async (uuid) => {
  */
 const makePost = async (post) => {
     try {
+        assertFieldExists(post,"author")
+        assertFieldExists(post,"content")
+        assertFieldExists(post,"topic")
+        post.likes = 0
+        post.createdAt = Date.now();
         const docRef = await addDoc(collection(db, "posts"), post);
         console.log("Document written with ID: ", docRef.id);
       } catch (exception) {
@@ -99,6 +115,9 @@ const makePost = async (post) => {
  */
 const makeComment = async (comment) => {
     try {
+        assertFieldExists(comment,"author")
+        assertFieldExists(comment,"content")
+        assertFieldExists(comment,"belongsTo")
         const docRef = await addDoc(collection(db, "comments"), comment);
         console.log("Document written with ID: ", docRef.id);
       } catch (exception) {
