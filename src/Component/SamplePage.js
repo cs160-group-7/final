@@ -1,8 +1,15 @@
 import React from "react";
 import '../App.css';
 import logo from '../logo.svg';
+import { useEffect } from "react";
+import {getPosts, like} from "../javascript/Server"
 
 const SamplePage = () => {
+
+    useEffect(() => {
+        like("pBtJ5KEJ8nhjFm7u8HQz")
+    }
+    )
     return (
         <div className="App">
           <header className="App-header">

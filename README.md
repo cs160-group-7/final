@@ -10,6 +10,9 @@ npm install firebase
 npm install reactstrap
 npm install react-router-dom
 
+Note:
+please use your own dev branch and make a pull request when your part is done.
+
 DOCS:
 1. How To Route?
 Please edit javascript/Router.js to add your HTML or component to the react router.

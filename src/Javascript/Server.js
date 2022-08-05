@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection,where, addDoc } from "firebase/firestore";
+import { getFirestore, getDocs, collection,where, addDoc, getDoc, doc, updateDoc } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyALs5yvnMRxJdw42Dbq1kXwynjlyJZ67So",
@@ -19,7 +19,7 @@ const db = getFirestore(app);
  * @returns List<Post>
  */
 export const getPosts = async () => {
-    const querySnapshot = await getDocs(collection(db, "Posts"));
+    const querySnapshot = await getDocs(collection(db, "posts"));
     const snapShotDocs = querySnapshot.docs
     const posts = []
     snapShotDocs.forEach(element => {
@@ -41,7 +41,7 @@ export const getPosts = async () => {
  */
 
 export const getPostsBy = async (uuid) => {
-    const querySnapshot = await getDocs(collection(db, "Posts"), where("author", "==", uuid));
+    const querySnapshot = await getDocs(collection(db, "posts"), where("author", "==", uuid));
     const snapShotDocs = querySnapshot.docs
     const posts = []
     snapShotDocs.forEach(element => {
@@ -61,7 +61,7 @@ export const getPostsBy = async (uuid) => {
  * @returns List<Post>
  */
  export const getPostsExcept = async (uuid) => {
-    const querySnapshot = await getDocs(collection(db, "Posts"), where("author", "!=", uuid));
+    const querySnapshot = await getDocs(collection(db, "posts"), where("author", "!=", uuid));
     const snapShotDocs = querySnapshot.docs
     const posts = []
     snapShotDocs.forEach(element => {
@@ -77,12 +77,17 @@ export const getPostsBy = async (uuid) => {
 
 /**
  * make post using the Post Object
- * return true if the operation was successful.
+ * raises an exception when fails.
  * @param Post
- * @returns boolean
+ * @returns void
  */
-const makePost = (post) => {
-    return;
+const makePost = async (post) => {
+    try {
+        const docRef = await addDoc(collection(db, "posts"), post);
+        console.log("Document written with ID: ", docRef.id);
+      } catch (exception) {
+        console.error("Error adding document: ", exception);
+      }
 }
 
 
@@ -90,10 +95,16 @@ const makePost = (post) => {
  * make Comment using the Comment Object
  * return true if the operation was successful.
  * @param Comment
- * @returns boolean
+ * @returns void
  */
-const makeComment = (Comment) => {
-    return;
+const makeComment = async (comment) => {
+    try {
+        const docRef = await addDoc(collection(db, "comments"), comment);
+        console.log("Document written with ID: ", docRef.id);
+      } catch (exception) {
+        console.error("Error adding document: ", exception);
+        throw exception
+      }
 }
 
 /**
@@ -102,7 +113,7 @@ const makeComment = (Comment) => {
  * @returns List<Comments>
  */
  export const getAllComentOf = async (uuid) => {
-    const querySnapshot = await getDocs(collection(db, "Comments"), where("belongsTo", "==", uuid));
+    const querySnapshot = await getDocs(collection(db, "comments"), where("belongsTo", "==", uuid));
     const snapShotDocs = querySnapshot.docs
     const comments = []
     snapShotDocs.forEach(element => {
@@ -122,6 +133,13 @@ const makeComment = (Comment) => {
  * @param UUID
  * @returns boolean
  */
-const like = async (uuid) => {
-    return null;
+export const like = async (uuid) => {
+    const docRef = doc(db, "posts", uuid);
+    try {
+        const docSnap = await getDoc(docRef);
+        const likes = docSnap.data().likes
+        updateDoc(docRef, {"likes" : likes + 1})
+    } catch(error) {
+        console.log(error)
+    }
 }
