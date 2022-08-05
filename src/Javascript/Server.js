@@ -25,7 +25,7 @@ function assertFieldExists(object, field) {
     try {
         assert(field in object, `Cannot find ${field} in object`)
     } catch(exception) {
-        throw new Error
+        throw new Error()
     }
 }
 
