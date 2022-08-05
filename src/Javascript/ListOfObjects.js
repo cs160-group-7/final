@@ -13,7 +13,7 @@
     topic : String,
     likes : int,
     author : String,
-    id : UUID
+    id : id
 }
 
 /**
@@ -28,8 +28,8 @@ const Comment = {
     createdAt : long,
     author : String,
     content : String,
-    belongsTo : UUID,
-    id : UUID
+    belongsTo : id,
+    id : id
 }
 
 /**
