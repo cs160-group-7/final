@@ -16,7 +16,7 @@ const db = getFirestore(app);
 
 /**
  * This Funtion returns all Post Object from the server
- * @returns List<Post>
+ * @returns {List<Post>}
  */
 export const getPosts = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
@@ -36,8 +36,8 @@ export const getPosts = async () => {
 /**
  * This Funtion returns all Post Object from the server by the user
  * filtered by the designated user's uuid.
- * @param UUID
- * @returns List<Post>
+ * @param {UUID}
+ * @returns {List<Post>}
  */
 
 export const getPostsBy = async (uuid) => {
@@ -57,8 +57,8 @@ export const getPostsBy = async (uuid) => {
 
 /**
  * This Funtion returns all Post Object from the server Except the designated user's uuid.
- * @param UUID
- * @returns List<Post>
+ * @param {UUID}
+ * @returns {List<Post>}
  */
  export const getPostsExcept = async (uuid) => {
     const querySnapshot = await getDocs(collection(db, "posts"), where("author", "!=", uuid));
@@ -78,7 +78,7 @@ export const getPostsBy = async (uuid) => {
 /**
  * make post using the Post Object
  * raises an exception when fails.
- * @param Post
+ * @param {Post}
  * @returns void
  */
 const makePost = async (post) => {
@@ -94,7 +94,7 @@ const makePost = async (post) => {
 /**
  * make Comment using the Comment Object
  * return true if the operation was successful.
- * @param Comment
+ * @param {Comment}
  * @returns void
  */
 const makeComment = async (comment) => {
@@ -109,8 +109,8 @@ const makeComment = async (comment) => {
 
 /**
  * get All Comments filtered by the UUID of the post
- * @param UUID
- * @returns List<Comments>
+ * @param {UUID}
+ * @returns {List<Comments>}
  */
  export const getAllComentOf = async (uuid) => {
     const querySnapshot = await getDocs(collection(db, "comments"), where("belongsTo", "==", uuid));
@@ -130,8 +130,8 @@ const makeComment = async (comment) => {
  * increase like of Post that matches UUID
  * return true if the operation was successful
  * 
- * @param UUID
- * @returns boolean
+ * @param {UUID}
+ * @returns {boolean}
  */
 export const like = async (uuid) => {
     const docRef = doc(db, "posts", uuid);

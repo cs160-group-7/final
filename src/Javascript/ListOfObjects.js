@@ -13,7 +13,7 @@
     topic : String,
     likes : int,
     author : String,
-    id : id
+    id : UUID
 }
 
 /**
@@ -28,8 +28,8 @@ const Comment = {
     createdAt : long,
     author : String,
     content : String,
-    belongsTo : id,
-    id : id
+    belongsTo : UUID,
+    id : UUID
 }
 
 /**
@@ -39,5 +39,6 @@ const Comment = {
  */
 const User = {
     userName : String,
-    passWord : String
+    passWord : String,
+    id : UUID
 }

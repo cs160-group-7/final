@@ -14,6 +14,7 @@ const AppRouter = () => {
             <Container id = "content">
             <Routes>
                 <Route exact path = "/" element={<SamplePage />} />
+                {/* <Route path= "/posts/:id" /> */}
                 <Route path = "*"default element={<PageNotFound />} />
             </Routes>
             </Container>
