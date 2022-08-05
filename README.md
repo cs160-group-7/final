@@ -7,3 +7,14 @@ Make sure that react is installed.
 
 npm install react
 npm install firebase
+npm install reactstrap
+npm install react-router-dom
+
+DOCS:
+1. How To Route?
+Please edit javascript/Router.js to add your HTML or component to the react router.
+For example, if you want to add myPage,
+add this following line.
+<Route exact path = "myPage" element={<myPage />} />
+
+
