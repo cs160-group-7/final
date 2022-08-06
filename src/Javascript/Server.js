@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
+// Assert
 function assert(condition, message) {
     if (!condition) {
         throw message || "Assertion failed";
@@ -150,7 +150,7 @@ export const like = async (uuid) => {
 }
 
 
-// Helper Functions
+// Helper Functions 
 export const makePostHelper = async (bucket, post) => {
     try {
         assertFieldExists(post,"author")
