@@ -2,8 +2,8 @@ import React from "react";
 import '../App.css';
 import logo from '../logo.svg';
 import { useEffect } from "react";
-import {getPosts, like} from "../javascript/Server"
-import {runTests} from "../javascript/testServer"
+import {getPosts, like} from "../server/Server"
+import {runTests} from "../server/testServer"
 
 const SamplePage = () => {
 

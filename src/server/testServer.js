@@ -1,4 +1,4 @@
-import {makeCommentHelper, makePostHelper} from "../javascript/Server"
+import {makeCommentHelper, makePostHelper} from "./Server"
 
 const testMakePost = async() => {
     const flawPostObj = {
@@ -30,6 +30,8 @@ const testMakeComment = async() => {
     if(await makeCommentHelper("testComments", flawCommentObj) !== false) {console.error("testMakeComment failed")}
 
 }
+
+
 export const runTests = () => {
     testMakePost();
     testMakeComment();
