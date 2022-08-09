@@ -1,5 +1,6 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import PageNotFound from "../pages/PageNotFound"
+import App from "../App"
 import React from "react";
 import {Container} from "reactstrap"
 import Welcome from "../Component/Welcome"
