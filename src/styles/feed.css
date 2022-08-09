@@ -3,3 +3,63 @@
     width: 390px;
     height: 80px;
 }
+
+.post-button {
+    color: #ffffff;
+    background-color: #B9CBD9;
+    width: 162px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 128px auto 0px;
+    display: block;
+    position: static;
+}
+
+.post-container{
+    background: #F5F2EC;
+    width: 321px;
+    height: 312px;
+    position: relative;
+    margin: 0 auto;
+    border: 1px dashed #323232;
+    border-bottom: 0;
+    border-spacing: 8px;
+}
+
+.post-inst {
+    width: 280px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: lighter;
+    line-height: 22px;
+    font-size: 20px;
+    text-align: center;
+    margin: 30px auto;
+    color: #323232;
+}
+
+.post-container>textarea {
+    border : 0;
+    width: 300px;
+    height: 290px;
+    border: none;
+    outline: none;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-150px,-145px);
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #323232;
+    font-family: 'Inconsolata', monospace;
+    line-height: 26px;
+    font-size: 20px;
+}
+
+.post-full-wrap {
+    background-color: #f8f8f8;
+    width:321px;
+    margin: 0 auto;
+}
