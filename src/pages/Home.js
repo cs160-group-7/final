@@ -10,13 +10,13 @@ const Home = () => {
     return (
         <div className="home">
           <img className="header" src={Top}></img>
-          <a href="/home">
+          <a href="/feed">
             <img className="button" src={Feed}></img>
           </a>
-          <a href="/messagehome">
+          <a href="/message">
             <img className="button" src={Message}></img>
           </a>
-          <a href="/home">
+          <a href="/exercise">
             <img className="button" src={Exercise}></img>
           </a>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageHeader from '../Component/MessageHeader';
+import MessageHeader from './MessageHeader';
 import mailimage from '../assets/mail-image.svg';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ const WelcomeText = () => {
 const MessageHome = () => {
     const navigate = useNavigate();
     function directClick() {
-        navigate("/messagehome/compose/")
+        navigate("/message/compose/")
     }
     
     return(

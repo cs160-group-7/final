@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import MessageHeader from '../Component/MessageHeader';
+import MessageHeader from './MessageHeader';
 import { useNavigate } from 'react-router-dom';
 import { makeMessage } from '../server/Server';
 const MessageCompose = () => {
@@ -9,7 +9,7 @@ const MessageCompose = () => {
 
     const navigate = useNavigate();
     function goBack() {
-        navigate("/messagehome");
+        navigate("/message");
         console.log("imin")
     }
 

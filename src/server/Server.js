@@ -183,7 +183,7 @@ export const getMessages = async() => {
             id : element.id,
             ...element.data(), 
         };
-        meassages.push(message)
+        messages.push(message)
     });
     return messages
 }
