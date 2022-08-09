@@ -7,6 +7,7 @@ import Home from "../pages/Home"
 import Feed from "../pages/Feed"
 import MessageHome from "../pages/MessageHome";
 import MessageCompose from "../pages/MessageCompose";
+import MessageInbox from "../pages/MessageInbox";
 import Post from "../Components/Post"
 import NewPost from "../pages/NewPost";
 
@@ -23,6 +24,8 @@ const AppRouter = () => {
                 <Route exact path = "/feed" element={<Feed />} />
                 <Route exact path = "/message" element={<MessageHome />} />
                 <Route exact path = "/message/compose" element={<MessageCompose />} />
+                <Route exact path = "/message/inbox" element={<MessageInbox />} />
+                {/* <Route path= "/posts/:id" /> */}
                 <Route path= "/feed/:id" element={<Post />} />
                 <Route path= "/feed/post" element={<NewPost />} />
                 <Route path = "*"default element={<PageNotFound />} />

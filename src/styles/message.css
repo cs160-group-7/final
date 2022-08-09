@@ -284,3 +284,11 @@ span.header-name {
   margin: 128px auto 0px;
   display: block;
 }
+.inbox-container{
+  width: 321px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto;
+  border: 1.5px solid #323232;
+  border-spacing: 8px;
+}

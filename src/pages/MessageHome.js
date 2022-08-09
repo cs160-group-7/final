@@ -18,6 +18,9 @@ const WelcomeText = () => {
 
 const MessageHome = () => {
     const navigate = useNavigate();
+    function inboxClick() {
+        navigate("/message/inbox/")
+    }
     function directClick() {
         navigate("/message/compose/")
     }
@@ -27,7 +30,7 @@ const MessageHome = () => {
             <MessageHeader/>
             <WelcomeText/>
             <div>
-                <button className="mail-button"><img src={mailimage}/></button>
+                <button className="mail-button" onClick={inboxClick}><img src={mailimage}/></button>
             </div>
             <button className="makesomeonesday" onClick={directClick}>
                <span>MAKE SOMEONE'S DAY</span>
