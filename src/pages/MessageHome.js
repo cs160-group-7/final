@@ -19,7 +19,7 @@ const WelcomeText = () => {
 const MessageHome = () => {
     const navigate = useNavigate();
     function directClick() {
-        navigate("/messagehome/compose/")
+        navigate("/message/compose/")
     }
 
     return(
