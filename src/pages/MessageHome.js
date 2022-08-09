@@ -21,7 +21,7 @@ const MessageHome = () => {
     function directClick() {
         navigate("/messagehome/compose/")
     }
-
+    
     return(
         <div>
             <MessageHeader/>
