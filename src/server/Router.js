@@ -17,6 +17,7 @@ const AppRouter = () => {
             <Routes>
                 <Route exact path = "/" element={<SamplePage />} />
                 <Route exact path = "/messagehome" element={<MessageHome/>} />
+                <Route exact path = "/messagehome/compose" element={<MessageCompose/>} />
                 {/* <Route path= "/posts/:id" /> */}
                 <Route path = "*"default element={<PageNotFound />} />
             </Routes>
