@@ -5,6 +5,9 @@ import React from "react";
 import {Container} from "reactstrap"
 import SamplePage from "../Component/SamplePage"
 
+import MessageHome from "../pages/MessageHome";
+import MessageCompose from "../pages/MessageCompose";
+
 const AppRouter = () => {
 
     return (
@@ -14,6 +17,8 @@ const AppRouter = () => {
             <Container id = "content">
             <Routes>
                 <Route exact path = "/" element={<SamplePage />} />
+                <Route exact path = "/messagehome" element={<MessageHome/>} />
+                <Route exact path = "/messagehome/compose" element={<MessageCompose/>} />
                 {/* <Route path= "/posts/:id" /> */}
                 <Route path = "*"default element={<PageNotFound />} />
             </Routes>
