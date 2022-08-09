@@ -8,8 +8,8 @@ class MessageList extends React.Component {
       <ul className="message-list">
         {this.props.messages.map(message => {        
           return (            
-            <li key={message.id} className="message">
-              {message.content}              
+            <li key={message.data().id} className="message">
+              {message.data().content}              
             </li>
           )
         })}
