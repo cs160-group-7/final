@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import MessageHeader from './MessageHeader';
+import MessageHeader from '../Components/MessageHeader';
 import { useNavigate } from 'react-router-dom';
 import { makeMessage } from '../server/Server';
 const MessageCompose = () => {
