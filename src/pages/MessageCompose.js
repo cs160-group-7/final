@@ -20,7 +20,7 @@ const MessageCompose = () => {
     }
 
     const handleCheckbox = (data) => {
-        if (data == "anonymous") {
+        if (data === "anonymous") {
         }
         setisAnonymous(!isAnonymous);
     }

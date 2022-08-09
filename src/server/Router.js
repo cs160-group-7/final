@@ -20,7 +20,7 @@ const AppRouter = () => {
                 <Route exact path = "/" element={<Welcome />} />
                 <Route exact path = "/home" element={<Home />} />
                 <Route exact path = "/feed" element={<Feed />} />
-                <Route exact path = "/messagehome" element={<MessageHome />} />
+                <Route exact path = "/message" element={<MessageHome />} />
                 <Route exact path = "/message/compose" element={<MessageCompose />} />
                 {/* <Route path= "/posts/:id" /> */}
                 <Route path = "*"default element={<PageNotFound />} />
