@@ -13,7 +13,7 @@ const Home = () => {
           <a href="/home">
             <img className="button" src={Feed}></img>
           </a>
-          <a href="/home">
+          <a href="/messagehome">
             <img className="button" src={Message}></img>
           </a>
           <a href="/home">
