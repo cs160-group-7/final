@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageHeader from './MessageHeader';
+import MessageHeader from '../Components/MessageHeader';
 import mailimage from '../assets/mail-image.svg';
 import { useNavigate } from 'react-router-dom';
 

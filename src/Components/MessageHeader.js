@@ -1,6 +1,5 @@
 import React from 'react';
-import '../pages/styles/message.css'
-import { useNavigate } from 'react-router-dom';
+import '../styles/message.css'
 import homeicon from '../assets/message-home.svg';
 
 
