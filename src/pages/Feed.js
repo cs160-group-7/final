@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import FeedHeader from "../Components/FeedHeader";
+import "../styles/feed.css"
 
 const Feed = () => {
 
@@ -8,7 +9,6 @@ const Feed = () => {
     return (
         <>
             <FeedHeader />
-            
         </>
     )
 }
