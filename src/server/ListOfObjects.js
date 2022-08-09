@@ -48,4 +48,5 @@ const Message = {
     content: String,
     name: String,
     isAnonymous : Boolean,
+    id : UUID
 }
