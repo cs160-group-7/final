@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../pages/styles/message.css'
 import homeicon from '../assets/message-home.svg';
 
 
