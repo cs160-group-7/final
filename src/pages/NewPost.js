@@ -1,10 +1,12 @@
-import React, {useState} from "react"
+import React, {useEffect, useState} from "react"
 import {useNavigate} from "react-router-dom";
+import {makePost} from "../server/Server";
+import exit from "../assets/exit.svg";
 
 const NewPost = () => {
 
-    const [topic, setTopic] = useState("")
-    const [content, setContent] = useState("GRATITUDE")
+    const [topic, setTopic] = useState("GRATITUDE")
+    const [content, setContent] = useState("")
     const [author, setAuthor] = useState("1")
     const onContentChanage = (event) => {
         const {target : {value}} = event;
@@ -17,15 +19,16 @@ const NewPost = () => {
         console.log(topic)
     }
 
-
     const navigate = useNavigate()
 
     return (
         <>
-            <button className = "exit">  </button>
+            <button className="exit-button" onClick={()=>navigate("/feed")}>
+                <img src={exit}/>
+            </button>
             <select id="topic-select" onChange={onTopicChange}>
-                <option>GRATITUDE</option>
                 <option>WORRY</option>
+                <option>GRATITUDE</option>
             </select>
             <h4 className="post-inst">Write an uplifting message to be sent to a random user.</h4>
             <div className="post-full-wrap">
@@ -37,7 +40,16 @@ const NewPost = () => {
                     ></textarea>
                 </div>
             </div>
-            <button className="post-button">PUBLISH</button>
+            <button className="publish-button" onClick={(event) => {
+                event.preventDefault();
+                const post = {
+                    author : author,
+                    content : content,
+                    topic : topic
+                }
+                makePost(post);
+                setContent("");
+            }}>PUBLISH</button>
         </>
     )
 }

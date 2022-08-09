@@ -44,10 +44,10 @@ const Feed = () => {
                     showYours ?
                         <>
                             {posts
-                                .filter((post) => post.author === MY_ID )
+                                .filter((post) => post.data().author === MY_ID )
                                 .map((post) => (
                                 <div className = "post" key = {post.id}>
-                                    <Link to = {`/feed/${post.id}`}>
+                                    <Link to = {`/feed/${post.id}`} state={{ pid: post.id }}>
                                         <Post pid ={post.id}/>
                                     </Link>
                                 </div>
@@ -56,10 +56,10 @@ const Feed = () => {
                         :
                         <>
                             {posts
-                                .filter((post) => post.author !== MY_ID )
+                                .filter((post) => post.data().author !== MY_ID )
                                 .map((post) => (
                                 <div className = "post" key = {post.id}>
-                                    <Link to = {`/feed/${post.id}`}>
+                                    <Link to = {`/feed/${post.id}`} state={{ pid: post.id }}>
                                         <Post pid ={post.id}/>
                                     </Link>
                                 </div>
