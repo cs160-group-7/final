@@ -6,7 +6,7 @@ import { makeMessage } from '../server/Server';
 const MessageCompose = () => {
 
     const [content, setContent] =  useState("");
-    const [isAnonymous, setisAnonymous] =  useState(true);
+    const [isAnonymous, setAnonymous] =  useState(false);
 
     const navigate = useNavigate();
     function goBack() {
@@ -22,7 +22,8 @@ const MessageCompose = () => {
     const handleCheckbox = (data) => {
         if (data === "anonymous") {
         }
-        setisAnonymous(!isAnonymous);
+        setAnonymous(!isAnonymous);
+        console.log("now that you pressed it,"+ isAnonymous)
     }
 
     return (
@@ -40,7 +41,7 @@ const MessageCompose = () => {
                 <div className="send-container">
                     <div>
                         <span>Remain anonymous</span>
-                        <input type="checkbox" defaultChecked={true} onChange={handleCheckbox("anonymous")}></input>
+                        <input type="checkbox" defaultChecked={true} onChange={() => handleCheckbox("anonymous")}></input>
                     </div>
                     <button className="send-button" onClick = {
                         () => {
