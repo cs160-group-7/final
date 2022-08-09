@@ -2,20 +2,27 @@ import React, {useState} from 'react';
 import MessageHeader from '../Components/MessageHeader';
 import { useNavigate } from 'react-router-dom';
 import { makeMessage } from '../server/Server';
+
 const MessageCompose = () => {
 
-    const [content, setContent] =  useState("")
-    const [isAnonymous, setisAnonymous] =  useState(false)
+    const [content, setContent] =  useState("");
+    const [isAnonymous, setisAnonymous] =  useState(true);
 
     const navigate = useNavigate();
     function goBack() {
         navigate("/message");
-        console.log("imin")
+
     }
 
-    const onContentChanage = (event) => {
+    const onContentChange = (event) => {
         const {target : {value}} = event;
         setContent(value);
+    }
+
+    const handleCheckbox = (data) => {
+        if (data == "anonymous") {
+        }
+        setisAnonymous(!isAnonymous);
     }
 
     return (
@@ -26,18 +33,18 @@ const MessageCompose = () => {
                 <div className="message-container">
                     <textarea
                     value = {content}
-                    onChange={onContentChanage}
-                    placeholder="What's on your mind?"
+                    onChange={onContentChange}
+                    placeholder="How is your day going?"
                     ></textarea>
                 </div>
                 <div className="send-container">
                     <div>
                         <span>Remain anonymous</span>
-                        <input type="checkbox" defaultChecked={true}></input>
+                        <input type="checkbox" defaultChecked={true} onChange={handleCheckbox("anonymous")}></input>
                     </div>
                     <button className="send-button" onClick = {
                         () => {
-                        makeMessage({content : content, isAnonymous : false})
+                        makeMessage({content : content, isAnonymous : isAnonymous})
                         setContent("")
                     }
                     }>Send</button>
