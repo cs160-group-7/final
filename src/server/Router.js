@@ -3,7 +3,8 @@ import PageNotFound from "../Component/PageNotFound"
 import App from "../App"
 import React from "react";
 import {Container} from "reactstrap"
-import SamplePage from "../Component/SamplePage"
+import Welcome from "../Component/Welcome"
+import Home from "../Component/Home"
 
 const AppRouter = () => {
 
@@ -13,7 +14,8 @@ const AppRouter = () => {
           <Router>
             <Container id = "content">
             <Routes>
-                <Route exact path = "/" element={<SamplePage />} />
+                <Route exact path = "/" element={<Welcome />} />
+                <Route exact path = "/home" element={<Home />} />
                 {/* <Route path= "/posts/:id" /> */}
                 <Route path = "*"default element={<PageNotFound />} />
             </Routes>
