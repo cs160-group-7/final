@@ -1,14 +1,13 @@
 import React from 'react';
 import MessageHeader from '../Component/MessageHeader';
 import mailimage from '../assets/mail-image.svg';
+import { useNavigate } from 'react-router-dom';
 
 const WelcomeText = () => {
     var month_arr = ["Jan","Feb","Mar","April", "June","July","Aug","Sep", "Oct", "Nov", "Dec"]
     const d = new Date();
     const month = month_arr[d.getMonth() - 1];
     const date = d.getDate();
-    console.log(month);
-    console.log(date);
     return(
         <div className ="welcome-text-wrap">
           <h3 className = "welcome-text">Good Morning <em>Name</em>,</h3>
@@ -18,6 +17,11 @@ const WelcomeText = () => {
 }
 
 const MessageHome = () => {
+    const navigate = useNavigate();
+    function directClick() {
+        navigate("/messagehome/compose/")
+    }
+
     return(
         <div>
             <MessageHeader/>
@@ -25,7 +29,7 @@ const MessageHome = () => {
             <div>
                 <button className="mail-button"><img src={mailimage}/></button>
             </div>
-            <button className="makesomeonesday">
+            <button className="makesomeonesday" onClick={directClick}>
                <span>MAKE SOMEONE'S DAY</span>
             </button>
         </div>

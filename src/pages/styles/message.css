@@ -185,3 +185,102 @@ span.header-name {
     width: 390px;
     display: inline-block;
 }
+
+/*Message Compose Styles*/
+
+.message-inst {
+  width: 280px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: lighter;
+  line-height: 22px;
+  font-size: 20px;
+  text-align: center;
+  margin: 30px auto;
+  color: #323232;
+}
+.message-container{
+  width: 321px;
+  height: 312px;
+  position: relative;
+  margin: 0 auto;
+  border: 1px dashed #323232;
+  border-bottom: 0;
+  border-spacing: 8px;
+}
+.message-container>textarea {
+  border : 0;
+  width: 300px;
+  height: 290px;
+  border: none;
+  outline: none;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-150px,-145px);
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #323232;
+  font-family: 'Inconsolata', monospace;
+  line-height: 26px;
+  font-size: 20px;
+}
+.send-container {
+  height : 116px;
+  width:321px;
+  margin:0 auto;
+  border: 1px dashed #323232;
+}
+.message-full-wrap {
+  background-color: #f8f8f8;
+  width:321px;
+  margin: 0 auto;
+}
+.send-container>div>span {
+  font-family: 'Inconsolata', monospace;
+  font-size: 20px;
+  line-height: 32px;
+  margin-top: 6px;
+  color : #323232;
+}
+.send-container>div>input {
+  width:26px;
+  height:26px;
+  margin: 9px 0px 3px 18px;
+  padding: 0;
+  border: 1.5px solid #323232;
+  display: inline-block;
+  vertical-align: middle;
+}
+.send-container>div {
+  height: 38px;
+  width: 321px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+.send-button {
+  font-family: 'Inconsolata', monospace;
+  font-weight: lighter;
+  border: 1px solid #646261;
+  background : #cfe3e2;
+  width: 120px;
+  height: 34px;
+  font-size: 24px;
+  border-radius: 12px;
+  margin-top: 22px;
+  position: absolute;
+  left:50%;
+  transform: translateX(-60px);
+}
+.back-button {
+  color: #ffffff;
+  background-color: #B9CBD9;
+  width: 162px;
+  height: 44px;
+  border-radius: 10px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 128px auto 0px;
+  display: block;
+}

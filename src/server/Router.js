@@ -6,6 +6,7 @@ import {Container} from "reactstrap"
 import SamplePage from "../Component/SamplePage"
 
 import MessageHome from "../pages/MessageHome";
+import MessageCompose from "../pages/MessageCompose";
 
 const AppRouter = () => {
 
