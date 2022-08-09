@@ -2,8 +2,8 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import PageNotFound from "../pages/PageNotFound"
 import React from "react";
 import {Container} from "reactstrap"
-import Welcome from "../Component/Welcome"
-import Home from "../Component/Home"
+import Welcome from "../pages/Welcome"
+import Home from "../pages/Home"
 
 const AppRouter = () => {
 
