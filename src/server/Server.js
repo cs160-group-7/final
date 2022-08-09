@@ -12,7 +12,8 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
+
 
 // Assert
 function assert(condition, message) {
@@ -35,17 +36,7 @@ function assertFieldExists(object, field) {
  */
 export const getPosts = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
-    const snapShotDocs = querySnapshot.docs
-    const posts = []
-    snapShotDocs.forEach(element => {
-        const post = {
-            id : element.id,
-            ...element.data(), 
-        };
-        posts.push(post)
-    });
-    console.log(posts)
-    return posts
+    return querySnapshot.docs
 }
 
 /**
@@ -68,6 +59,12 @@ export const getPostsBy = async (uuid) => {
     });
     console.log(posts)
     return posts
+}
+
+export const getPostOf = async (pid) => {
+    const ref = doc(db, "posts", pid);
+    return await getDoc(ref);
+
 }
 
 /**
@@ -171,21 +168,33 @@ export const makeMessage = async (message) => {
 
 /**
  * get messages to the server
+ * Using Example:
+ *     useEffect(() => {
+ *         getMessages().then(message => {
+ *             setMessages(message)
+ *         })
+ *     }, [])
+ *     to add the messages to the messages state.
  * @param {}
  * @returns {List<Message>}
  */
 export const getMessages = async() => {
+
     const querySnapshot = await getDocs(collection(db, "Messages"));
-    const snapShotDocs = querySnapshot.docs
-    const messages = []
-    snapShotDocs.forEach(element => {
-        const message = {
-            id : element.id,
-            ...element.data(), 
-        };
-        messages.push(message)
-    });
-    return messages
+    return querySnapshot.docs
+    //
+    //
+    // const querySnapshot = await getDocs(collection(db, "Messages"));
+    // const snapShotDocs = querySnapshot.docs
+    // const messages = []
+    // snapShotDocs.forEach(element => {
+    //     const message = {
+    //         id : element.id,
+    //         ...element.data(),
+    //     };
+    //     messages.push(message)
+    // });
+    // return messages
 }
 
 
