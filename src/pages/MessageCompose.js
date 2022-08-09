@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles/message.css'
 import MessageHeader from '../Components/MessageHeader';
 import { useNavigate } from 'react-router-dom';
 import { makeMessage } from '../server/Server';
