@@ -180,3 +180,10 @@ export const makeCommentHelper = async (bucket, comment) => {
         return false
       }
 }
+
+export const makeMessage = async (message) => {
+    assertFieldExists(message,"content")
+    assertFieldExists(message,"isAnonymous")
+    const docRef = await addDoc(collection(db, "Messages"), message);
+    console.log("Document written with ID: ", docRef.id);
+}

@@ -2,10 +2,15 @@ import React from "react";
 import '../App.css';
 import logo from '../logo.svg';
 import { useEffect } from "react";
-import {getPosts, like} from "../server/Server"
+import {getPosts, like, makeMessage} from "../server/Server"
 import {runTests} from "../server/testServer"
 
 const SamplePage = () => {
+
+    const message = {
+      content: "sofun",
+      isAnonymous : true
+    }
 
     useEffect(() => {
         // runTests()
@@ -26,7 +31,12 @@ const SamplePage = () => {
               rel="noopener noreferrer"
             >
               Learn React
+
             </a>
+          <br />
+            <button onClick={() => makeMessage(
+                message
+              )}>fladjfklajdlkfjadlkfjla</button>
           </header>
         </div>
       );

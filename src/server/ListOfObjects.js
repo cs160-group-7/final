@@ -42,3 +42,10 @@ const User = {
     passWord : String,
     id : UUID
 }
+
+const Message = {
+    createdAt : long,
+    content: String,
+    name: String,
+    isAnonymous : Boolean,
+}
