@@ -115,7 +115,7 @@ export const makeComment = async(comment) => {
  * @param {UUID}
  * @returns {List<Comments>}
  */
- export const getAllComentOf = async (uuid) => {
+ export const getAllCommentOf = async (uuid) => {
     const querySnapshot = await getDocs(collection(db, "comments"), where("belongsTo", "==", uuid));
     const snapShotDocs = querySnapshot.docs
     const comments = []
@@ -147,6 +147,45 @@ export const like = async (uuid) => {
         console.log(error)
         return false;
     }
+}
+
+/**
+ * make a message request to the server
+ * return true if the operation was successful
+ * 
+ * @param {Message}
+ * @returns {boolean}
+ */
+export const makeMessage = async (message) => {
+    assertFieldExists(message,"content")
+    assertFieldExists(message,"isAnonymous")
+    try {
+        const docRef = await addDoc(collection(db, "Messages"), message);
+        console.log("Document written with ID: ", docRef.id);   
+        return true;
+    } catch (e){
+        console.error("There was an error while making a message request");   
+        return false;
+    }
+}
+
+/**
+ * get messages to the server
+ * @param {}
+ * @returns {List<Message>}
+ */
+export const getMessages = async() => {
+    const querySnapshot = await getDocs(collection(db, "Messages"));
+    const snapShotDocs = querySnapshot.docs
+    const messages = []
+    snapShotDocs.forEach(element => {
+        const message = {
+            id : element.id,
+            ...element.data(), 
+        };
+        meassages.push(message)
+    });
+    return messages
 }
 
 
@@ -181,9 +220,3 @@ export const makeCommentHelper = async (bucket, comment) => {
       }
 }
 
-export const makeMessage = async (message) => {
-    assertFieldExists(message,"content")
-    assertFieldExists(message,"isAnonymous")
-    const docRef = await addDoc(collection(db, "Messages"), message);
-    console.log("Document written with ID: ", docRef.id);
-}
