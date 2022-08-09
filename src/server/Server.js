@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection,where, addDoc, getDoc, doc, updateDoc } from "firebase/firestore";
+import { getFirestore, getDocs, collection,where, addDoc, getDoc, doc, updateDoc, query } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyALs5yvnMRxJdw42Dbq1kXwynjlyJZ67So",
@@ -36,6 +36,24 @@ function assertFieldExists(object, field) {
  */
 export const getPosts = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
+    return querySnapshot.docs
+}
+
+/**
+ * get All Comments filtered by the UUID of the post
+ * Using Example:
+ *     useEffect(() => {
+ *         getAllComentsOf(pid).then(comments => {
+ *             setMessages(comments)
+ *         })
+ *     }, [])
+ *     to add the messages to the messages state.
+ * @param {UUID}
+ * @returns {List<Comments>}
+ */
+export const getAllCommentsOf = async (uuid) => {
+    const q = query(collection(db, "comments"), where("belongsTo", "==", uuid));
+    const querySnapshot = await getDocs(q);
     return querySnapshot.docs
 }
 
@@ -105,25 +123,6 @@ export const makePost = async (post) => {
  */
 export const makeComment = async(comment) => {
     makeCommentHelper("comments", comment)
-}
-
-/**
- * get All Comments filtered by the UUID of the post
- * @param {UUID}
- * @returns {List<Comments>}
- */
- export const getAllCommentOf = async (uuid) => {
-    const querySnapshot = await getDocs(collection(db, "comments"), where("belongsTo", "==", uuid));
-    const snapShotDocs = querySnapshot.docs
-    const comments = []
-    snapShotDocs.forEach(element => {
-        const comment = {
-            id : element.id,
-            ...element.data(), 
-        };
-        comments.push(comment)
-    });
-    return comments
 }
 
 /**

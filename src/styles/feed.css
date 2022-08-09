@@ -78,3 +78,17 @@
     position: static;
 }
 
+.reply-button {
+    color: #ffffff;
+    background-color: #B9CBD9;
+    width: 162px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 128px auto 0px;
+    display: block;
+    position: static;
+}
+
