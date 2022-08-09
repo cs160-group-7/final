@@ -4,10 +4,8 @@ import homeicon from '../assets/message-home.svg';
 
 
 const MessageHeader = () => {
-
-
     return(
-        <div>
+        <div className="header-container">
             <button className="home-button">
                 <img src={homeicon}/>
             </button>
