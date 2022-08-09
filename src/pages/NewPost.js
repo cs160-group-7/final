@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import {useNavigate} from "react-router-dom";
+import {makePost} from "../server/Server";
 
 const NewPost = () => {
 
@@ -16,7 +17,6 @@ const NewPost = () => {
         setTopic(value);
         console.log(topic)
     }
-
 
     const navigate = useNavigate()
 
@@ -37,7 +37,15 @@ const NewPost = () => {
                     ></textarea>
                 </div>
             </div>
-            <button className="post-button">PUBLISH</button>
+            <button className="publish-button" onClick={() => {
+
+                const post = {
+                    author : author,
+                    content : content,
+                    topic : topic
+                }
+                makePost(post);
+            }}>PUBLISH</button>
         </>
     )
 }
