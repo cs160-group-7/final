@@ -10,7 +10,6 @@ import MessageHome from "../pages/MessageHome";
 import MessageCompose from "../pages/MessageCompose";
 import MessageSpecific from "../pages/MessageSpecific";
 import MessageInbox from "../pages/MessageInbox";
-import MessageSpecific from "../pages/MessageSpecific";
 import NewPost from "../pages/NewPost";
 import PostDetail from "../pages/PostDetail";
 import MeditationHome from "../pages/MeditationHome";
