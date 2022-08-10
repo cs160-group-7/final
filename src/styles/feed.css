@@ -338,3 +338,13 @@ span.feed-header-name {
     left: 20px;
     top: 20px;
 }
+
+.posted-nothing {
+    position: sticky;
+    width: 288px;
+    height: 292px;
+    left: 51px;
+    top: 276px;
+
+    background: #EAE7E2;
+}

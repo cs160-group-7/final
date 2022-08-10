@@ -23,9 +23,8 @@ const AppRouter = () => {
           <Router>
             <Container id = "content">
             <Routes>
-                <Route exact path = "/" element={<SamplePage />} />
-                <Route exact path = "/meditation" element={<Meditation />} />
                 <Route exact path = "/" element={<Welcome />} />
+                <Route exact path = "/meditation" element={<Meditation />} />
                 <Route exact path = "/home" element={<Home />} />
                 <Route exact path = "/feed" element={<Feed />} />
                 <Route exact path = "/message" element={<MessageHome />} />

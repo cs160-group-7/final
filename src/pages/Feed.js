@@ -5,6 +5,7 @@ import {Container, Row} from "reactstrap";
 import {Link, useNavigate} from "react-router-dom";
 import {getPosts} from "../server/Server";
 import Post from "../Components/Post"
+import noPost from "../assets/noPost.svg"
 
 const Feed = () => {
 
@@ -43,7 +44,8 @@ const Feed = () => {
                 {
                     showYours ?
                         <div id = "posts">
-                            {posts
+                            {posts.filter((post) => post.data().author === MY_ID ).length > 0 ?
+                                posts
                                 .filter((post) => post.data().author === MY_ID )
                                 .map((post) => (
                                 <div className = "post-wrapper" key = {post.id}>
@@ -51,7 +53,9 @@ const Feed = () => {
                                         <Post pid ={post.id}/>
                                     </Link>
                                 </div>
-                            ))}
+                            )) :
+                                <img src = {noPost} className="posted-nothing"/>
+                            }
                         </div>
                         :
                             <div id = "posts">
