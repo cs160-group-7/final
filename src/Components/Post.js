@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from "react"
 import "../styles/post.css"
-import {getPostOf} from "../server/Server";
+import {getAllCommentsOf, getPostOf} from "../server/Server";
+import Heart from "../assets/heart.svg"
+import Comment from "../assets/comment.svg"
+import homeicon from "../assets/message-home.svg";
 
 const Post = (props) => {
 
@@ -8,6 +11,8 @@ const Post = (props) => {
     const [likes, setLikes] = useState(0)
     const [content, setContent] = useState("")
     const [pid, setPid] = useState(props.pid)
+    const [numOfComments, setNumOfComments] = useState(0)
+
 
     useEffect(() => {
         getPostOf(pid).then(post => {
@@ -16,6 +21,9 @@ const Post = (props) => {
             setContent(data.content)
             setLikes(data.likes)
         });
+        getAllCommentsOf(pid).then(comment => {
+            setNumOfComments(numOfComments + 1)
+        })
     },[])
 
     return (
@@ -27,11 +35,11 @@ const Post = (props) => {
                 {author}
 
             </div>
-            <div id = "post-likes" >
-                {likes}
-            </div>
-            <div id = "post-comments">
-                12
+            <div className = "post-stats" >
+                <img src={Heart} className="comment-stat-icon"/>
+                <span className="comment-stat-number">{likes}</span>
+                <img src={Comment} className="comment-stat-icon"/>
+                <span className="comment-stat-number"> {numOfComments}</span>
             </div>
         </>
     )

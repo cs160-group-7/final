@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {getPostOf, makeComment } from "../server/Server";
 import {getAllCommentsOf} from "../server/Server";
-import FeedHeader from "../Components/FeedHeader";
 import PostDetailHeader from "../Components/PostDetailHeader";
+import Comment from "../Components/Comment";
 
 const PostDetail = () => {
     const location = useLocation();
@@ -37,6 +37,7 @@ const PostDetail = () => {
     return (
         <>
             <PostDetailHeader/>
+            <div id = "post-detail-wrapper">
             {showCommentUI ?
                 <>
                     <textarea
@@ -57,18 +58,18 @@ const PostDetail = () => {
                 :
                 <>
                     topic : {topic}
-                    content: {content}
-                    likes: {likes}
-                    comments: {comments.map((comment) => (
-                        <div key = {comment.id}>
-                        <div>Author: {comment.data().author}</div>
-                        <div>Content: {comment.data().content}</div>
+                    <div id = "post-detail-content-wrapper">
+                        <span className="post-detail-content">{content}</span>
                     </div>
-                ))}
-                    <button className="reply-button" onClick={() => setShowCommentUI(true)}>reply</button>
+                    likes: {likes}
+                    {comments.map((comment) => (
+                        <Comment comment = {comment.data()}/>
+                    ))}
+                    <button className="back-button" onClick={()=>navigate("/feed")}>back</button>
                 </>
             }
-        </>
+        </div>
+            </>
     )
 }
 

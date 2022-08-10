@@ -32,39 +32,39 @@ const Feed = () => {
         <>
             <FeedHeader/>
             <Row>
-                <button id="friends" onClick = {() => onFriendsClick()}>
+                <button className="feed-filter" id = "friends" onClick = {() => onFriendsClick()}>
                     FRIENDS
                 </button>
-                <button id="yours" onClick = {() => onYoursClick()}>
+                <button className="feed-filter" id = "yours" onClick = {() => onYoursClick()}>
                     YOURS
                 </button>
             </Row>
             <Container id = "post-view">
                 {
                     showYours ?
-                        <>
+                        <div id = "posts">
                             {posts
                                 .filter((post) => post.data().author === MY_ID )
                                 .map((post) => (
-                                <div className = "post" key = {post.id}>
+                                <div className = "post-wrapper" key = {post.id}>
                                     <Link to = {`/feed/${post.id}`} state={{ pid: post.id }}>
                                         <Post pid ={post.id}/>
                                     </Link>
                                 </div>
                             ))}
-                        </>
+                        </div>
                         :
-                        <>
+                            <div id = "posts">
                             {posts
                                 .filter((post) => post.data().author !== MY_ID )
                                 .map((post) => (
-                                <div className = "post" key = {post.id}>
+                                <div className = "post-wrapper" key = {post.id}>
                                     <Link to = {`/feed/${post.id}`} state={{ pid: post.id }}>
                                         <Post pid ={post.id}/>
                                     </Link>
                                 </div>
                             ))}
-                        </>
+                            </div>
                 }
             </Container>
             <button className="post-button" onClick={()=>navigate("/feed/post")}>ADD POST</button>
