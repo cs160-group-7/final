@@ -1,6 +1,5 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import PageNotFound from "../pages/PageNotFound"
-import App from "../App"
 import React from "react";
 import {Container} from "reactstrap"
 import Welcome from "../pages/Welcome"
@@ -8,7 +7,13 @@ import Home from "../pages/Home"
 import Feed from "../pages/Feed"
 import MessageHome from "../pages/MessageHome";
 import MessageCompose from "../pages/MessageCompose";
+<<<<<<< HEAD
 import MessageSpecific from "../pages/MessageSpecific";
+=======
+import MessageInbox from "../pages/MessageInbox";
+import NewPost from "../pages/NewPost";
+import PostDetail from "../pages/PostDetail";
+>>>>>>> 5b5f9230cb7bc247c01906ef175bd5b5e0111739
 
 const AppRouter = () => {
 
@@ -25,6 +30,9 @@ const AppRouter = () => {
                 <Route exact path = "/message/compose" element={<MessageCompose />} />
                 <Route exact path = "/message/inbox/specific" element={<MessageSpecific/>}/>
                 {/* <Route path= "/posts/:id" /> */}
+                <Route exact path = "/message/inbox" element={<MessageInbox />} />
+                <Route path= "/feed/:id" element={<PostDetail />} />
+                <Route path= "/feed/post" element={<NewPost />} />
                 <Route path = "*"default element={<PageNotFound />} />
             </Routes>
             </Container>
