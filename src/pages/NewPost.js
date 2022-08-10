@@ -30,7 +30,7 @@ const NewPost = () => {
                 <option>WORRY</option>
                 <option>GRATITUDE</option>
             </select>
-            <h4 className="post-inst">Write an uplifting message to be sent to a random user.</h4>
+            <h4 className="post-inst">of the day...</h4>
             <div className="post-full-wrap">
                 <div className="post-container">
                     <textarea
@@ -49,6 +49,7 @@ const NewPost = () => {
                 }
                 makePost(post);
                 setContent("");
+                navigate("/feed");
             }}>PUBLISH</button>
         </>
     )

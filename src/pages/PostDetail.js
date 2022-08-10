@@ -4,6 +4,7 @@ import {getPostOf, makeComment } from "../server/Server";
 import {getAllCommentsOf} from "../server/Server";
 import PostDetailHeader from "../Components/PostDetailHeader";
 import Comment from "../Components/Comment";
+import Heart from "../assets/heart.svg"
 
 const PostDetail = () => {
     const location = useLocation();
@@ -36,7 +37,7 @@ const PostDetail = () => {
 
     return (
         <>
-            <PostDetailHeader/>
+            <PostDetailHeader headerName="POST"/>
             <div id = "post-detail-wrapper">
             {showCommentUI ?
                 <>
@@ -60,8 +61,12 @@ const PostDetail = () => {
                     topic : {topic}
                     <div id = "post-detail-content-wrapper">
                         <span className="post-detail-content">{content}</span>
+                        <div className="post-detail-stats">
+                            <img src={Heart} className="comment-stat-icon"/>
+                            <span>{likes}</span>
+                        </div>
                     </div>
-                    likes: {likes}
+                    {/* likes: {likes} */}
                     {comments.map((comment) => (
                         <Comment comment = {comment.data()}/>
                     ))}
