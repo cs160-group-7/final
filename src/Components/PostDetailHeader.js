@@ -12,7 +12,7 @@ const PostDetailHeader = () => {
             <button className="home-button" onClick={()=>navigate("/feed")}>
                 <img src={homeicon}/>
             </button>
-            <span className="header-name">FEED</span>
+            <span className="feed-header-name">FEED</span>
         </div>
     )
 }

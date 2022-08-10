@@ -12,7 +12,7 @@ const FeedHeader = () => {
             <button className="home-button" onClick={()=>navigate("/home")}>
                 <img src={homeicon}/>
             </button>
-            <span className="header-name">FEED</span>
+            <span className="feed-header-name">FEED</span>
         </div>
     )
 }
