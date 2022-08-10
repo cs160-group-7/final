@@ -51,7 +51,6 @@ span.feed-header-name {
 
 #post-detail-content-wrapper {
     box-sizing: border-box;
-
     width: 363px;
     height: 370px;
     left: 15px;
@@ -59,6 +58,9 @@ span.feed-header-name {
     padding: 10px;
     background: #F5F2EC;
     border: 1px dashed #646261;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
 }
 
 .post-wrapper {
@@ -143,63 +145,38 @@ span.feed-header-name {
 }
 
 .post-container{
-    background: #F5F2EC;
-    width: 321px;
-    height: 312px;
-    position: relative;
-    margin: 0 auto;
-    border: 1px dashed #323232;
-    border-bottom: 0;
-    border-spacing: 8px;
-}
-
-.post-inst {
-    width: 280px;
-    font-family: 'Inconsolata', monospace;
-    font-weight: lighter;
-    line-height: 22px;
-    font-size: 20px;
-    text-align: center;
-    margin: 30px auto;
-    color: #323232;
-}
-
-.post-container>textarea {
-    border : 0;
-    width: 300px;
-    height: 290px;
-    border: none;
-    outline: none;
     position: absolute;
-    left: 50%;
-    top:50%;
-    transform: translate(-150px,-145px);
-    padding: 0;
-    background-color: #f8f8f8;
-    color: #323232;
-    font-family: 'Inconsolata', monospace;
-    line-height: 26px;
-    font-size: 20px;
-}
+    width: 390px;
+    height: 370px;
+    left: 0px;
+    top: 192px;
+    background: #F5F2EC;
 
-.post-full-wrap {
-    background-color: #f8f8f8;
-    width:321px;
-    margin: 0 auto;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    padding : 10px
 }
 
 .publish-button {
-    color: #ffffff;
-    background-color: #B9CBD9;
+    position: absolute;
     width: 162px;
     height: 44px;
+    left: 114px;
+    top: 754px;
+
+    background: #B9CBD9;
     border-radius: 10px;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Inconsolata';
+    font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    margin: 128px auto 0px;
-    display: block;
-    position: static;
+    line-height: 25px;
+    text-align: center;
+
+    color: #FFFFFF;
 }
 
 .reply-button {
@@ -230,14 +207,38 @@ span.feed-header-name {
     position: static;
 }
 
+.show-comment-button {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    width: 76px;
+    height: 44px;
+    left: 142px;
+    top: 467px;
+    background: #EAE7E2;
+    border-radius: 10px;
+    margin: 10px auto 0px;
+    display: block;
+    position: static;
+
+}
+
+
 .comment-body {
     box-sizing: border-box;
-
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
     width: 363px;
     height: 108px;
-
+    padding : 15px;
     background: #CFE3E2;
     border: 1px dashed #646261;
+    margin-bottom: 10px;
 
 }
 
@@ -245,6 +246,12 @@ span.feed-header-name {
     width: 80px;
     height: 19px;
     background: #EAE7E2;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
 }
 
 #comment-wrapper {
@@ -262,7 +269,72 @@ span.feed-header-name {
     width: 9px;
     height: 19px;
     top: 100px;
+}
 
+.comment-box {
+    box-sizing: border-box;
+    width: 363px;
+    height: 175px;
+    left: 13px;
+    top: 39px;
+    background: #EAE7E2;
+    border: 1px dashed #646261;
+    margin-top : 10px;
+    padding : 10px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.publish-comment-button {
+    position: absolute;
+    width: 76px;
+    height: 44px;
+    left: 157px;
+    top: 292px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    background: #D7E2E8;
+    border-radius: 10px;
+    margin: 10px auto 0px;
+}
+
+#topic-select {
+    position: absolute;
+    width: 150px;
+    height: 38px;
+    left: 127px;
+    top: 81px;
 }
 
 
+.post-inst {
+
+    position: absolute;
+    width: 166px;
+    height: 25px;
+    left: 112px;
+    top: 126px;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #323232;
+}
+
+.exit-button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 20px;
+    top: 20px;
+}

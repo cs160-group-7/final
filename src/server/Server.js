@@ -222,6 +222,7 @@ export const makeCommentHelper = async (bucket, comment) => {
         assertFieldExists(comment,"belongsTo")
         const docRef = await addDoc(collection(db, bucket), comment);
         console.log("Document written with ID: ", docRef.id);
+        window.location.reload()
         return true
       } catch (exception) {
         return false

@@ -10,7 +10,7 @@ const Feed = () => {
 
     const [showYours, setShowYours] = useState(true)
     const [posts, setPosts] = useState([]);
-    const MY_ID = "1"
+    const MY_ID = "Wonjae"
     const navigate = useNavigate();
 
     useEffect(() => {

@@ -7,7 +7,7 @@ const NewPost = () => {
 
     const [topic, setTopic] = useState("GRATITUDE")
     const [content, setContent] = useState("")
-    const [author, setAuthor] = useState("1")
+    const [author, setAuthor] = useState("Wonjae")
     const onContentChanage = (event) => {
         const {target : {value}} = event;
         setContent(value);
@@ -30,15 +30,14 @@ const NewPost = () => {
                 <option>WORRY</option>
                 <option>GRATITUDE</option>
             </select>
-            <h4 className="post-inst">Write an uplifting message to be sent to a random user.</h4>
+            <h4 className="post-inst">of the day</h4>
             <div className="post-full-wrap">
-                <div className="post-container">
                     <textarea
                         value = {content}
                         onChange={onContentChanage}
                         placeholder="What's on your mind?"
+                        className="post-container"
                     ></textarea>
-                </div>
             </div>
             <button className="publish-button" onClick={(event) => {
                 event.preventDefault();
@@ -47,8 +46,9 @@ const NewPost = () => {
                     content : content,
                     topic : topic
                 }
-                makePost(post);
                 setContent("");
+                makePost(post);
+                navigate("/feed")
             }}>PUBLISH</button>
         </>
     )
