@@ -7,13 +7,10 @@ import Home from "../pages/Home"
 import Feed from "../pages/Feed"
 import MessageHome from "../pages/MessageHome";
 import MessageCompose from "../pages/MessageCompose";
-<<<<<<< HEAD
 import MessageSpecific from "../pages/MessageSpecific";
-=======
 import MessageInbox from "../pages/MessageInbox";
 import NewPost from "../pages/NewPost";
 import PostDetail from "../pages/PostDetail";
->>>>>>> 5b5f9230cb7bc247c01906ef175bd5b5e0111739
 
 const AppRouter = () => {
 
