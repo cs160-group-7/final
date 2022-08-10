@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, getDocs, collection,where, addDoc, getDoc, doc, updateDoc } from "firebase/firestore";
+import { getFirestore, getDocs, collection,where, addDoc, getDoc, doc, updateDoc, query } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyALs5yvnMRxJdw42Dbq1kXwynjlyJZ67So",
@@ -12,7 +12,8 @@ const firebaseConfig = {
   };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
+
 
 // Assert
 function assert(condition, message) {
@@ -35,17 +36,25 @@ function assertFieldExists(object, field) {
  */
 export const getPosts = async () => {
     const querySnapshot = await getDocs(collection(db, "posts"));
-    const snapShotDocs = querySnapshot.docs
-    const posts = []
-    snapShotDocs.forEach(element => {
-        const post = {
-            id : element.id,
-            ...element.data(), 
-        };
-        posts.push(post)
-    });
-    console.log(posts)
-    return posts
+    return querySnapshot.docs
+}
+
+/**
+ * get All Comments filtered by the UUID of the post
+ * Using Example:
+ *     useEffect(() => {
+ *         getAllComentsOf(pid).then(comments => {
+ *             setMessages(comments)
+ *         })
+ *     }, [])
+ *     to add the messages to the messages state.
+ * @param {UUID}
+ * @returns {List<Comments>}
+ */
+export const getAllCommentsOf = async (uuid) => {
+    const q = query(collection(db, "comments"), where("belongsTo", "==", uuid));
+    const querySnapshot = await getDocs(q);
+    return querySnapshot.docs
 }
 
 /**
@@ -68,6 +77,12 @@ export const getPostsBy = async (uuid) => {
     });
     console.log(posts)
     return posts
+}
+
+export const getPostOf = async (pid) => {
+    const ref = doc(db, "posts", pid);
+    return await getDoc(ref);
+
 }
 
 /**
@@ -111,25 +126,6 @@ export const makeComment = async(comment) => {
 }
 
 /**
- * get All Comments filtered by the UUID of the post
- * @param {UUID}
- * @returns {List<Comments>}
- */
- export const getAllComentOf = async (uuid) => {
-    const querySnapshot = await getDocs(collection(db, "comments"), where("belongsTo", "==", uuid));
-    const snapShotDocs = querySnapshot.docs
-    const comments = []
-    snapShotDocs.forEach(element => {
-        const comment = {
-            id : element.id,
-            ...element.data(), 
-        };
-        comments.push(comment)
-    });
-    return comments
-}
-
-/**
  * increase like of Post that matches UUID
  * return true if the operation was successful
  * 
@@ -147,6 +143,57 @@ export const like = async (uuid) => {
         console.log(error)
         return false;
     }
+}
+
+/**
+ * make a message request to the server
+ * return true if the operation was successful
+ * 
+ * @param {Message}
+ * @returns {boolean}
+ */
+export const makeMessage = async (message) => {
+    assertFieldExists(message,"content")
+    assertFieldExists(message,"isAnonymous")
+    try {
+        const docRef = await addDoc(collection(db, "Messages"), message);
+        console.log("Document written with ID: ", docRef.id);   
+        return true;
+    } catch (e){
+        console.error("There was an error while making a message request");   
+        return false;
+    }
+}
+
+/**
+ * get messages to the server
+ * Using Example:
+ *     useEffect(() => {
+ *         getMessages().then(message => {
+ *             setMessages(message)
+ *         })
+ *     }, [])
+ *     to add the messages to the messages state.
+ * @param {}
+ * @returns {List<Message>}
+ */
+export const getMessages = async() => {
+
+    const querySnapshot = await getDocs(collection(db, "Messages"));
+    return querySnapshot.docs
+    //
+    //
+    // const querySnapshot = await getDocs(collection(db, "Messages"));
+    // const snapShotDocs = querySnapshot.docs
+    // const messages = []
+    // snapShotDocs.forEach(element => {
+    //     const message = {
+    //         id : element.id,
+    //         ...element.data(),
+    //     };
+    //     messages.push(message)
+    // });
+    // return messages
 }
 
 
@@ -175,8 +222,10 @@ export const makeCommentHelper = async (bucket, comment) => {
         assertFieldExists(comment,"belongsTo")
         const docRef = await addDoc(collection(db, bucket), comment);
         console.log("Document written with ID: ", docRef.id);
+        window.location.reload()
         return true
       } catch (exception) {
         return false
       }
 }
+

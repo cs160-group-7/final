@@ -1,0 +1,340 @@
+.feed-header-container {
+    background: #EAE7E2;
+    width: 100%;
+    height: 80px;
+}
+
+span.feed-header-name {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    font-size: 26px;
+    color: #323232;
+    line-height: 80px;
+    position: absolute;
+    padding-left: 40px;
+}
+
+#friends {
+    position: sticky;
+    width: 84px;
+    height: 60px;
+    left: 71px;
+    top: 102px;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 25px;
+
+    color: #646261;
+}
+
+#yours {
+    position: sticky;
+    width: 60px;
+    height: 60px;
+    left: 260px;
+    top: 102px;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 25px;
+
+    color: #646261;
+}
+
+#post-detail-content-wrapper {
+    box-sizing: border-box;
+    width: 363px;
+    height: 370px;
+    left: 15px;
+    top: 125px;
+    padding: 10px;
+    background: #F5F2EC;
+    border: 1px dashed #646261;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+.post-wrapper {
+    box-sizing: border-box;
+    width: 350px;
+    height: 150px;
+    background: #F5F2EC;
+    border: 1px dashed #323232;
+    margin-bottom : 10px;
+    position: relative;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    /* or 167% */
+
+
+    color: #323232;
+
+}
+
+.post {
+    display: flex;
+    justifyContent: 'center';
+    alignItems: 'center';
+}
+
+#posts {
+    margin : 0 auto;
+    width : 350px
+}
+
+#post-detail-wrapper {
+    margin : 0 auto;
+    width : 362px
+}
+
+.post-stats {
+    width: 100%;
+    height: 24px;
+    background: rgba(50, 50, 50, 0.3);
+    position: absolute;
+    bottom : 0;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17.6522px;
+    line-height: 19px;
+    /* identical to box height, or 107% */
+
+    text-align: right;
+    color: #F5F2EC;
+
+}
+
+.post-detail-content {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    /* or 167% */
+
+
+    color: #323232;
+}
+
+.post-button {
+    color: #ffffff;
+    background-color: #B9CBD9;
+    width: 162px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 60px auto 0px;
+    display: block;
+    position: static;
+}
+
+.post-container{
+    position: absolute;
+    width: 390px;
+    height: 370px;
+    left: 0px;
+    top: 192px;
+    background: #F5F2EC;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    padding : 10px
+}
+
+.publish-button {
+    position: absolute;
+    width: 162px;
+    height: 44px;
+    left: 114px;
+    top: 754px;
+
+    background: #B9CBD9;
+    border-radius: 10px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.reply-button {
+    color: #ffffff;
+    background-color: #B9CBD9;
+    width: 162px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px auto 0px;
+    display: block;
+    position: static;
+}
+
+.back-button {
+    color: #ffffff;
+    background-color: #B9CBD9;
+    width: 162px;
+    height: 44px;
+    border-radius: 10px;
+    font-family: 'Inconsolata', monospace;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px auto 0px;
+    display: block;
+    position: static;
+}
+
+.show-comment-button {
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    width: 76px;
+    height: 44px;
+    left: 142px;
+    top: 467px;
+    background: #EAE7E2;
+    border-radius: 10px;
+    margin: 10px auto 0px;
+    display: block;
+    position: static;
+
+}
+
+
+.comment-body {
+    box-sizing: border-box;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    width: 363px;
+    height: 108px;
+    padding : 15px;
+    background: #CFE3E2;
+    border: 1px dashed #646261;
+    margin-bottom: 10px;
+
+}
+
+.comment-author {
+    width: 80px;
+    height: 19px;
+    background: #EAE7E2;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+}
+
+#comment-wrapper {
+    /*position: relative;*/
+    width: 363px;
+    height: 565px;
+}
+
+.comment-stat-icon {
+    width: 25.22px;
+    height: 29px;
+}
+
+.comment-stat-number {
+    width: 9px;
+    height: 19px;
+    top: 100px;
+}
+
+.comment-box {
+    box-sizing: border-box;
+    width: 363px;
+    height: 175px;
+    left: 13px;
+    top: 39px;
+    background: #EAE7E2;
+    border: 1px dashed #646261;
+    margin-top : 10px;
+    padding : 10px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.publish-comment-button {
+    position: absolute;
+    width: 76px;
+    height: 44px;
+    left: 157px;
+    top: 292px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    background: #D7E2E8;
+    border-radius: 10px;
+    margin: 10px auto 0px;
+}
+
+#topic-select {
+    position: absolute;
+    width: 150px;
+    height: 38px;
+    left: 127px;
+    top: 81px;
+}
+
+
+.post-inst {
+
+    position: absolute;
+    width: 166px;
+    height: 25px;
+    left: 112px;
+    top: 126px;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 25px;
+    text-align: center;
+
+    color: #323232;
+}
+
+.exit-button {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 20px;
+    top: 20px;
+}
