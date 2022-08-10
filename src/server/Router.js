@@ -2,6 +2,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import PageNotFound from "../pages/PageNotFound"
 import React from "react";
 import {Container} from "reactstrap"
+import Meditation from "../Component/Meditation";
 import Welcome from "../pages/Welcome"
 import Home from "../pages/Home"
 import Feed from "../pages/Feed"
@@ -22,6 +23,8 @@ const AppRouter = () => {
           <Router>
             <Container id = "content">
             <Routes>
+                <Route exact path = "/" element={<SamplePage />} />
+                <Route exact path = "/meditation" element={<Meditation />} />
                 <Route exact path = "/" element={<Welcome />} />
                 <Route exact path = "/home" element={<Home />} />
                 <Route exact path = "/feed" element={<Feed />} />
