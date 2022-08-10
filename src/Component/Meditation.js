@@ -1,15 +1,10 @@
 import React from "react";
 import '../App.css';
-import { useEffect } from "react";
+import {useNavigate} from "react-router-dom";
 
 const Meditation = () => {
 
-  useEffect(() => {
-    // runTests()
-  }
-  )
-
-  
+  const navigate = useNavigate()
 
   function grow(rate, num) {
     document.getElementById("meditation-button").innerText = "Stop meditation"
@@ -21,9 +16,9 @@ const Meditation = () => {
 
     function stopit() {
       stop = 1;
-      console.log(stop);
+      navigate("/home")
     }
-  
+
     let a = setInterval(() => {
       if (stop === 1) {
         clearInterval(a);
@@ -63,14 +58,14 @@ const Meditation = () => {
 
 
   function helper() {
-    grow(2, 100);
+    grow(1, 50);
   }
   return (
     <div className="App">
       <header className="Meditation-header">
         {/* <img id="breathe-img" src={meditationLogo} className="App-logo" alt="meditation-logo" /> */}
 
-        <span id="dot1" class="dot"></span>
+        <span id="dot1" className="dot"></span>
 
         <p id="Breathe">
           Ready?
