@@ -11,6 +11,8 @@ import MessageInbox from "../pages/MessageInbox";
 import MessageSpecific from "../pages/MessageSpecific";
 import NewPost from "../pages/NewPost";
 import PostDetail from "../pages/PostDetail";
+import MeditationHome from "../pages/MeditationHome";
+import MeditationWaiting from "../pages/MeditationWaiting";
 
 const AppRouter = () => {
 
@@ -28,6 +30,8 @@ const AppRouter = () => {
                 <Route exact path = "/message/inbox" element={<MessageInbox />} />
                 <Route path= "/feed/:id" element={<PostDetail />} />
                 <Route path= "/feed/post" element={<NewPost />} />
+                <Route path="/exercise" element = {<MeditationHome /> } />
+                <Route path="/exercise/waiting" element = {<MeditationWaiting /> } />
                 <Route path = "*"default element={<PageNotFound />} />
                 <Route path= "/message/:id" element={<MessageSpecific />} />
             </Routes>
