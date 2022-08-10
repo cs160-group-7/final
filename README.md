@@ -5,10 +5,11 @@ Our Figma Link: https://www.figma.com/file/9ctDTnQVBvxtzeEopxtGxp/Final-Project-
 Try npm start in your repo to test.
 Make sure that react is installed.
 
-npm install react
-npm install firebase
-npm install reactstrap
-npm install react-router-dom
+npm install react  
+npm install firebase  
+npm install reactstrap  
+npm install react-router-dom  
+npm install boostrap  
 
 Note:
 please use your own dev branch and make a pull request when your part is done.

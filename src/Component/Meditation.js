@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import '../App.css';
 import {useNavigate} from "react-router-dom";
 
@@ -7,49 +7,57 @@ const Meditation = () => {
   const navigate = useNavigate()
 
   function grow(rate, num) {
-    document.getElementById("meditation-button").innerText = "Stop meditation"
-    document.getElementById("meditation-button").onclick = stopit;
-    document.getElementById("Breathe").innerText = "Breathe in";
-    document.getElementById("dot1").style.backgroundColor = "#FCC9C5";
+
     let count = 0;
     let stop = 0;
 
-    function stopit() {
-      stop = 1;
-      navigate("/home")
+    const stopit = () => {
+      clearInterval(a);
+      navigate("/exercise")
     }
 
+    document.getElementById("Breathe").innerText = "Breathe in";
+    document.getElementById("dot1").style.backgroundColor = "#B9CBD9";
+    document.getElementById("meditation-button").onclick = stopit;
+
+
     let a = setInterval(() => {
-      if (stop === 1) {
-        clearInterval(a);
-        a = null;
-        setTimeout(() => console.log("hi"), 3000);
-      }
       count = count + 1;
-      var height = document.getElementById("dot1").clientHeight;
-      var width = document.getElementById("dot1").clientWidth;
+      const height = document.getElementById("dot1").clientHeight;
+      const width = document.getElementById("dot1").clientWidth;
       document.getElementById("dot1").style.height = height + rate + "px";
       document.getElementById("dot1").style.width = width + rate + "px";
-      if (count === num) {
+      if (height >= 380 && width >= 380 ) {
         clearInterval(a);
+        a = null;
         document.getElementById("Breathe").innerText = "Hold";
         setTimeout(() => shrink(rate, num), 3000);
       }
     }, 50);
-  
   }
+
   function shrink(rate, num) {
-    document.getElementById("Breathe").innerText = "Breathe out";
-    document.getElementById("dot1").style.backgroundColor = "#B9CBD9";
+
     let count = 0;
-    const b = setInterval(() => {
+
+    const stopit = () => {
+      clearInterval(b);
+      navigate("/exercise")
+    }
+
+    document.getElementById("Breathe").innerText = "Breathe out";
+    document.getElementById("dot1").style.backgroundColor = "#FCC9C5";
+    document.getElementById("meditation-button").onclick = stopit;
+
+    let b = setInterval(() => {
       count = count + 1;
-      var height = document.getElementById("dot1").clientHeight;
-      var width = document.getElementById("dot1").clientWidth;
-      document.getElementById("dot1").style.height = height - rate + "px";
-      document.getElementById("dot1").style.width = width - rate + "px";
-      if (count === num) {
+      const height = document.getElementById("dot1").clientHeight;
+      const width = document.getElementById("dot1").clientWidth;
+      document.getElementById("dot1").style.height = height - 1 + "px";
+      document.getElementById("dot1").style.width = width - 1 + "px";
+      if (height <= 0 && width <= 0 ) {
         clearInterval(b);
+        b = null;
         document.getElementById("Breathe").innerText = "Wait";
         setTimeout(() => grow(rate, num), 3000);
       }
@@ -58,12 +66,14 @@ const Meditation = () => {
 
 
   function helper() {
-    grow(1, 50);
+    document.getElementById("meditation-button").innerText = "Stop meditation"
+
+    grow(6, 50)
+
   }
   return (
     <div className="App">
       <header className="Meditation-header">
-        {/* <img id="breathe-img" src={meditationLogo} className="App-logo" alt="meditation-logo" /> */}
 
         <span id="dot1" className="dot"></span>
 
@@ -74,7 +84,7 @@ const Meditation = () => {
         <button
           type="button"
           id="meditation-button"
-          onClick={helper}
+          onClick={() => helper()}
         >
           Start meditation
         </button>
