@@ -19,12 +19,11 @@ const AppRouter = () => {
 
     return (
         <>
-        <Container id = "Router">
+        <div id = "Router">
           <Router>
-            <Container id = "content">
+            <div id = "content">
             <Routes>
                 <Route exact path = "/" element={<Welcome />} />
-                <Route exact path = "/meditation" element={<Meditation />} />
                 <Route exact path = "/home" element={<Home />} />
                 <Route exact path = "/feed" element={<Feed />} />
                 <Route exact path = "/message" element={<MessageHome />} />
@@ -34,12 +33,13 @@ const AppRouter = () => {
                 <Route path= "/feed/post" element={<NewPost />} />
                 <Route path="/exercise" element = {<MeditationHome /> } />
                 <Route path="/exercise/waiting" element = {<MeditationWaiting /> } />
+                <Route path = "/exercise/meditation" element={<Meditation />} />
                 <Route path = "*"default element={<PageNotFound />} />
                 <Route path= "/message/:id" element={<MessageSpecific />} />
             </Routes>
-            </Container>
+            </div>
           </Router>
-        </Container>
+        </div>
         </>
       )
 }

@@ -3,8 +3,6 @@ import Top from '../images/top.png';
 import Feed from '../images/feed.png';
 import Message from '../images/message.png';
 import Exercise from '../images/exercise.png';
-import {getPosts, like} from "../server/Server"
-import {runTests} from "../server/testServer"
 
 const Home = () => {
     return (
