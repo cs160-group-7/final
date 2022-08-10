@@ -8,6 +8,7 @@ import Feed from "../pages/Feed"
 import MessageHome from "../pages/MessageHome";
 import MessageCompose from "../pages/MessageCompose";
 import MessageInbox from "../pages/MessageInbox";
+import MessageSpecific from "../pages/MessageSpecific";
 import NewPost from "../pages/NewPost";
 import PostDetail from "../pages/PostDetail";
 
@@ -28,6 +29,7 @@ const AppRouter = () => {
                 <Route path= "/feed/:id" element={<PostDetail />} />
                 <Route path= "/feed/post" element={<NewPost />} />
                 <Route path = "*"default element={<PageNotFound />} />
+                <Route path= "/message/:id" element={<MessageSpecific />} />
             </Routes>
             </Container>
           </Router>
