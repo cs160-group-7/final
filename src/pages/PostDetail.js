@@ -41,24 +41,23 @@ const PostDetail = () => {
             <div id = "post-detail-wrapper">
             {showCommentUI ?
                 <>
-                    <textarea
+                    <textarea className = "comment-box"
                         value = {commentDetail}
                         onChange={onCommentDetailChange}
                         placeholder="What's on your mind?"
                     ></textarea>
                     <button className="publish-comment-button" onClick={() => {
                         const comment = {
-                            author : "1",
+                            author : "Wonjae",
                             content : commentDetail,
                             belongsTo : pid
                         }
-                        makeComment(comment)
                         setShowCommentUI(false)
+                        makeComment(comment)
                     }}>Post</button>
                 </>
                 :
                 <>
-                    topic : {topic}
                     <div id = "post-detail-content-wrapper">
                         <span className="post-detail-content">{content}</span>
                         <div className="post-detail-stats">
@@ -67,9 +66,13 @@ const PostDetail = () => {
                         </div>
                     </div>
                     {/* likes: {likes} */}
+                    <div>
+
+                    </div>
                     {comments.map((comment) => (
                         <Comment comment = {comment.data()}/>
                     ))}
+                    <button className="show-comment-button" onClick={() => setShowCommentUI(true)}>reply</button>
                     <button className="back-button" onClick={()=>navigate("/feed")}>back</button>
                 </>
             }

@@ -1,28 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from "react"
 import '../styles/message.css'
 import MessageHeader from '../Components/MessageHeader';
-import { useNavigate } from 'react-router-dom';
+import {useParams, useNavigate} from "react-router-dom";
 import { getMessages } from '../server/Server';
 
-
-const MessageContent = () => {
-    <p className = "content-container"></p>
-}
 const MessageSpecific = () => {
-    const navigate = useNavigate();
-    function goBack() {
-        navigate("/message/inbox");
-    }
+  const mid = useParams()
+      
+  const navigate = useNavigate();
 
-    return(
-        <div>
-            <MessageHeader/>
-            <div className = "message-border">
-                <MessageContent/>
+  function goBack() {
+      navigate("/message/inbox");
+  }
+
+  const [messages, setMessages] = useState([]);
+    useEffect(() => {
+      getMessages().then(message => {
+          setMessages(message)
+      })
+    }, [])
+
+  return(
+    <div>
+      <MessageHeader/>
+      <div className="message-border">
+          {messages.filter((message) => (message.id === mid["id"])).map((message) => (
+            <div className="message-content">
+              {message.data().content}
             </div>
-            <button className="back-button message-specific" onClick = {goBack}>Back</button>
-        </div>
-    );
+          ))}
+      </div>
+      <button className="back-button message-specific" onClick = {goBack}>Back</button>
+    </div>
+  );
 }
 
 export default MessageSpecific;
+

@@ -1,0 +1,146 @@
+#motif-image {
+    object-fit: contain;
+    position: absolute;
+    width: 117px;
+    height: 172px;
+    left: 422px;
+    top: 1500px;
+}
+
+#header-image {
+    position: absolute;
+    width: 400px;
+    left: 0px;
+    top: 0px;
+}
+
+#home-image {
+    object-fit: contain;
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    left: 20px;
+    top: 12px;
+}
+
+#heading {
+    position: absolute;
+    width: 186px;
+    height: 35px;
+    left: 102px;
+    top: 22px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 35px;
+    letter-spacing: 0.2em;
+    color: #323232;
+}
+
+#chosen {
+    position: absolute;
+    width: 141px;
+    height: 33px;
+    left: 40px;
+    top: 120px;
+}
+
+#all {
+    position: absolute;
+    width: 30px;
+    height: 21px;
+    left: 95px;
+    top: 125px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+#meditation {
+    position: absolute;
+    width: 142px;
+    height: 25px;
+    left: 109px;
+    top: 237px;
+
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 25px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #646261;
+}
+
+#favorite {
+    position: absolute;
+    width: 90px;
+    height: 21px;
+    left: 240px;
+    top: 125px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    color: #646261;
+}
+
+#pink_top {
+    position: absolute;
+    width: 360px;
+    height: 115px;
+    left: 15px;
+    top: 192px;
+}
+
+#blue_top {
+    position: absolute;
+    width: 360px;
+    height: 115px;
+    left: 15px;
+    top: 342px;
+}
+
+#pink_bottom {
+    position: absolute;
+    width: 360px;
+    height: 115px;
+    left: 15px;
+    top: 492px;
+}
+
+#blue_bottom {
+    position: absolute;
+    width: 360px;
+    height: 115px;
+    left: 15px;
+    top: 642px;
+}
+
+#waiting-page {
+    background-color: #EAE7E2;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+#wait-message {
+    color: #000000;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<style>
+
+#motif-image {
+    object-fit: contain;
+    position: absolute;
+    width: 117px;
+    height: 172px;
+    left: 422px;
+    top: 1500px;
+}
+
+#comments {
+    position: absolute;
+    width: 800px;
+    height: 70px;
+    left: 100px;
+    top: 800px;
+    font-family: 'Inconsolata';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 100px;
+    text-align: center;
+
+    color: #000000;
+}
+
+</style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm">
+            <p id="comments">
+                FIND SOMEWHERE COMFORTABLE EXERCISE WILL BEGIN SHORTLY
+            </p>
+        </div>
+    <div class="row">
+        <div class="col-sm">
+            <img src="../assets/meditation_waiting_motif.png" id="motif-image" alt="motif">
+        </div>
+    </div>
+        </div>
+</body>
+<script>
+    setTimeout(function(){
+        window.location.href = 'index.html';
+    }, 5000);
+</script>
+</html>

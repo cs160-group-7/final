@@ -315,3 +315,20 @@ p.content-container {
   list-style-type: none;
   padding: 15px 7px;
 }
+.message>a {
+  text-decoration: none;
+  font-family: 'Inconsolata', monospace;
+  color: #323232;
+}
+.message-border{
+  width: 321px;
+  height: 312px;
+  position: relative;
+  margin: 50px auto;
+  border: 1px dashed #323232;
+  background-color: #B9CBD9;
+  padding: 50px 25px;
+  font-family: 'Inconsolata', monospace;
+  line-height: 26px;
+  font-size: 20px;
+}
