@@ -20,7 +20,7 @@
     width: 56px;
     height: 56px;
     left: 20px;
-    top: 12px;
+    top: 15px;
 }
 
 #heading {
@@ -28,7 +28,7 @@
     width: 186px;
     height: 35px;
     left: 102px;
-    top: 22px;
+    top: 0px;
     font-family: 'Playfair Display';
     font-style: normal;
     font-weight: 700;
@@ -51,7 +51,7 @@
     width: 30px;
     height: 21px;
     left: 95px;
-    top: 125px;
+    top: 105px;
     font-family: 'Inconsolata';
     font-style: normal;
     font-weight: 500;
@@ -65,7 +65,7 @@
     width: 142px;
     height: 25px;
     left: 109px;
-    top: 237px;
+    top: 215px;
 
     font-family: 'Inconsolata';
     font-style: normal;
@@ -83,7 +83,7 @@
     width: 90px;
     height: 21px;
     left: 240px;
-    top: 125px;
+    top: 105px;
     font-family: 'Inconsolata';
     font-style: normal;
     font-weight: 500;

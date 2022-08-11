@@ -1,6 +1,6 @@
 import React from "react"
 import "../styles/meditation.css"
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const MeditationHome = () => {
     return (
