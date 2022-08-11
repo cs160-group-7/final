@@ -261,14 +261,37 @@ span.feed-header-name {
 }
 
 .comment-stat-icon {
+    position: absolute;
     width: 25.22px;
     height: 29px;
+    left: 268px;
+    top: 0px;
+}
+
+.comment-stat-icon-2 {
+    position: absolute;
+    width: 25.22px;
+    height: 29px;
+    left: 307px;
+    top: 0px;
 }
 
 .comment-stat-number {
-    width: 9px;
-    height: 19px;
-    top: 100px;
+    position: absolute;
+    width: 17.65px;
+    height: 29px;
+    left: 285px;
+    top: 4px;
+
+}
+
+.comment-stat-number-2 {
+    position: absolute;
+    width: 17.65px;
+    height: 29px;
+    left: 324px;
+    top: 4px;
+
 }
 
 .comment-box {

@@ -38,8 +38,8 @@ const Post = (props) => {
             <div className = "post-stats" >
                 <img src={Heart} className="comment-stat-icon"/>
                 <span className="comment-stat-number">{likes}</span>
-                <img src={Comment} className="comment-stat-icon"/>
-                <span className="comment-stat-number"> {numOfComments}</span>
+                <img src={Comment} className="comment-stat-icon-2"/>
+                <span className="comment-stat-number-2"> {numOfComments}</span>
             </div>
         </>
     )

@@ -30,7 +30,7 @@ const NewPost = () => {
                 <option>WORRY</option>
                 <option>GRATITUDE</option>
             </select>
-            <h4 className="post-inst">of the day</h4>
+            <h4 className="post-inst">of the day...</h4>
             <div className="post-full-wrap">
                     <textarea
                         value = {content}
