@@ -4,14 +4,14 @@ const Comment = (props) => {
     const comment = props.comment
 
     return (
-        <>
+        <div className = "comment-in-detail">
             <div className="comment-author">
-                {comment.author}
+                {comment.data().author}
             </div>
             <div className="comment-body">
-                {comment.content}
+                {comment.data().content}
             </div>
-        </>
+        </div>
     )
 
 }

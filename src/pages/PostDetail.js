@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
-import {getPostOf, makeComment } from "../server/Server";
+import {getPostOf, makeComment, updatePost } from "../server/Server";
 import {getAllCommentsOf} from "../server/Server";
 import PostDetailHeader from "../Components/PostDetailHeader";
 import Comment from "../Components/Comment";
@@ -54,6 +54,7 @@ const PostDetail = () => {
                         }
                         setShowCommentUI(false)
                         makeComment(comment)
+                        updatePost(pid)
                     }}>Post</button>
                 </>
                 :
@@ -70,7 +71,7 @@ const PostDetail = () => {
 
                     </div>
                     {comments.map((comment) => (
-                        <Comment comment = {comment.data()}/>
+                        <Comment comment = {comment} key = {comment.id}/>
                     ))}
                     <button className="show-comment-button" onClick={() => setShowCommentUI(true)}>reply</button>
                     <button className="back-button" onClick={()=>navigate("/feed")}>back</button>

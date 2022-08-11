@@ -22,11 +22,9 @@ const Feed = () => {
 
     const onFriendsClick = () => {
         setShowYours(false)
-        console.log(showYours)
     }
     const onYoursClick = () => {
         setShowYours(true)
-        console.log(showYours)
     }
 
     return (

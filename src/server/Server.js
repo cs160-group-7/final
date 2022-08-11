@@ -145,6 +145,19 @@ export const like = async (uuid) => {
     }
 }
 
+export const updatePost = async (uuid) => {
+    const docRef = doc(db, "posts", uuid);
+    try {
+        const docSnap = await getDoc(docRef);
+        const numOfComments = docSnap.data().numOfComments
+        updateDoc(docRef, {"numOfComments" : numOfComments + 1})
+        return true;
+    } catch(error) {
+        console.log(error)
+        return false;
+    }
+}
+
 /**
  * make a message request to the server
  * return true if the operation was successful
@@ -205,6 +218,7 @@ export const makePostHelper = async (bucket, post) => {
         assertFieldExists(post,"topic")
         post.likes = 0
         post.createdAt = Date.now();
+        post.numOfComments = 0
         const docRef = await addDoc(collection(db, bucket), post);
         console.log("Document written with ID: ", docRef.id);
         return true;

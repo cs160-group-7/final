@@ -12,7 +12,7 @@ const Post = (props) => {
     const [content, setContent] = useState("")
     const [pid, setPid] = useState(props.pid)
     const [numOfComments, setNumOfComments] = useState(0)
-
+    const [comments, setComments] = useState([])
 
     useEffect(() => {
         getPostOf(pid).then(post => {
@@ -20,10 +20,8 @@ const Post = (props) => {
             setAuthor(data.author)
             setContent(data.content)
             setLikes(data.likes)
+            setNumOfComments(data.numOfComments)
         });
-        getAllCommentsOf(pid).then(comment => {
-            setNumOfComments(numOfComments + 1)
-        })
     },[])
 
     return (
