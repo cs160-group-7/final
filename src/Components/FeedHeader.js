@@ -4,7 +4,7 @@ import homeicon from '../assets/message-home.svg';
 import {useNavigate} from "react-router-dom";
 
 
-const FeedHeader = () => {
+const FeedHeader = (props) => {
 
     const navigate = useNavigate()
     return(
@@ -12,7 +12,7 @@ const FeedHeader = () => {
             <button className="home-button" onClick={()=>navigate("/home")}>
                 <img src={homeicon}/>
             </button>
-            <span className="feed-header-name">FEED</span>
+            <span className="feed-header-name">{props.headerName}</span>
         </div>
     )
 }

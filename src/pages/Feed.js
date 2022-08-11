@@ -31,7 +31,7 @@ const Feed = () => {
 
     return (
         <>
-            <FeedHeader/>
+            <FeedHeader headerName = "FEED"/>
             <Row>
                 <button className="feed-filter" id = "friends" onClick = {() => onFriendsClick()}>
                     FRIENDS

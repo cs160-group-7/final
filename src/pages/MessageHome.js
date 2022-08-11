@@ -10,7 +10,7 @@ const WelcomeText = () => {
     const date = d.getDate();
     return(
         <div className ="welcome-text-wrap">
-          <h3 className = "welcome-text">Good Morning <em>Name</em>,</h3>
+          <h3 className = "welcome-text">Good Morning <em>Abigail</em>,</h3>
           <h3 className = "welcome-text">Today is <em>{month} {date}</em>.</h3>
         </div>
     );
